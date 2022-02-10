@@ -49,7 +49,7 @@ for i in range (epochs):
     summed_grad_vec = (np.sum(grad_vec, axis = 1))
 
     # gradient of level surfcae x^2+y^2+z^2.....
-    normal_vec_to_plane = 2*(parameters) 
+    normal_vec_to_plane = (parameters) 
 
     # projection_of_grad_on_plane = summed_grad_vec - np.dot((np.dot(summed_grad_vec,normal_vec_to_plane)),normal_vec_to_plane) 
     projection_of_grad_on_plane = summed_grad_vec - (np.dot(summed_grad_vec,normal_vec_to_plane))*normal_vec_to_plane
@@ -59,6 +59,6 @@ for i in range (epochs):
 
 # The point we got will be a little above the surface of the sphere, so we bring it back on the unit sphere by normalizing it 
 parameters =  parameters/(np.sum(np.square(parameters)))
-print(parameters)
+print("The points are",parameters)
 # making sure the points lie on unit sphere 
-print(np.sum(np.square(parameters)))
+print("Magnitide of the point vector : ",np.sum(np.square(parameters)))
